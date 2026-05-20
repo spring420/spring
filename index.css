@@ -9,7 +9,6 @@
     list-style: none;
     box-sizing: border-box;
     word-break: keep-all;
-    outline: 1px solid green;
 }
 
 img {
@@ -69,7 +68,7 @@ a {
 }
 
 a:link {
-    color: #666;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -123,9 +122,6 @@ header button {
   background:#000;
   color: #fff;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 4px;
   border-radius: 50%;
 }
@@ -176,9 +172,9 @@ header button {
 }
 
 .mediacenter {
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: 45%;
+  top: 40%;
   padding: 10px 8px;
   color: #fff;
   border-radius: 12px 0 0 12px;
@@ -196,10 +192,10 @@ header button {
 
 /* 전체 캡슐 박스 */
 .banner {
-  position: absolute;      /* 메인 비디오 위에 띄우고 싶다면 absolute */
+  position: fixed;     
   right: 16px;             /* 원하는 위치로 조절 */
   top: 40%;
-  transform: translateY(200%);
+  transform: translateY(150%);
   width: 82px;             /* 캡슐 폭 */
   height: 150px;           /* 캡슐 전체 높이 */
   background: rgba(255,255,255,0.9);
@@ -235,6 +231,7 @@ header button {
 .banner-link p {
   font-size: 0.75rem;
   line-height: 1.2;
+  color:#666;
 }
 
 /* 아래쪽 동그란 X 버튼 */
@@ -305,10 +302,22 @@ header button {
   margin-bottom: 18px;
 }
 
-.hero-panel .txt span {
+.hero-panel  {
   display:inline-block;
   font-size: 1.3rem;
   font-weight: 900;
+  color:white;
+}
+
+.txt :nth-child(4){
+  display:inline-block;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color:white;
+}
+
+.txt :nth-child(3){
+  display:none;
 }
 
 /* 공통: hero 안에 있는 TOP 버튼 */
@@ -357,9 +366,7 @@ header button {
 .info-inner {
   max-width: 960px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  display: block;
 }
 
 /* 왼쪽 로고 + 메뉴 */
@@ -420,7 +427,7 @@ header button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 35px;
+  height: 50px;
   padding: 0 18px;
   border: 2px solid #ddd;
   border-radius: 999px;
@@ -428,14 +435,14 @@ header button {
 }
 
 .mc-btn img{
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
 .sns {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border: 2px solid #ddd;
   border-radius: 50%;
   display: inline-flex;
@@ -445,8 +452,8 @@ header button {
 }
 
 .sns img {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
   color: #666;
 }
@@ -490,6 +497,7 @@ header button {
   overflow-y: auto;
   padding: 10px 18px 16px;
   border-top: 2px solid #eee;
+  background: #fff;
 }
 
 .group-list li + li {
@@ -590,6 +598,9 @@ footer p {
   header button {
     width: 44px;
     height: 44px;
+    display:flex important!;
+    align-items:center;
+    text-align: center;
   }
 
   .lang {
@@ -598,49 +609,87 @@ footer p {
   }
 
   .main {
+    position:reletive;
     height: 900px;
   }
 
   .mediacenter {
+    position: fixed;
     top: 42%;
+    right: 1px;
   }
 
   .banner {
-    right: 28px;
-    top: auto;
-    bottom: 140px;
+    position: fixed;
+    right: 20px;
+    top: 70%;
     transform: none;
+  }
+  
+  .banner-link p {
+    color: #555;
   }
 
   .full-video {
+    position: absolute;
+    left: 85%;
     bottom: 32px;
     padding: 14px 18px;
+    color: #fff;
   }
 
    .hero {
-    height: 780px;
+     display:flex;
+     align-items: center; 
   }
 
+  .hero img{
+    width:50%;
+  }
+  
   .hero-panel {
-    width: 420px;
-    max-width: none;
-    left: 12%;
-    top: auto;
-    bottom: 120px;
+    position:static;
+    width: 50%;
     transform: none;
     padding: 40px 36px;
+    background: transparent;
+    align-items: center;
+    margin-bottom: 30px;
   }
 
   .hero-panel .txt h2 {
-    font-size: 2rem;
+    width: 500px;
+    font-size: 3rem;
+    color:black;
+    text-align: left;
+    margin-bottom: 30px;
+    margin-left: 30px;
   }
 
   .hero-panel .txt p {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    color:black;
+    margin-bottom: 30px;
+    margin-left: 30px;
   }
 
   .hero-panel .txt span {
     font-size: 1.6rem;
+    color:black;
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+  
+  .hero-panel .txt :nth-child(4){
+    display:none;
+  }
+  
+  .txt >:nth-child(3){
+    width: 100px;
+    padding:10px;
+    display:block;
+    border-bottom: 1px solid #000;
+    margin-left: 30px;
   }
 
   .hero .top {
@@ -650,35 +699,82 @@ footer p {
     height: 60px;
   }
 
-  .info {
+   .info {
     padding: 60px 40px 40px;
   }
 
+  /* 왼쪽(로고+메뉴) / 오른쪽(버튼+그룹박스) 두 덩어리 */
   .info-inner {
     max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;      /* 위쪽 정렬 */
+    justify-content: space-between;
     gap: 80px;
+  }
+
+  .info-nav {
+    display: flex;
     align-items: flex-start;
+    gap: 50px;                    /* 로고와 메뉴 사이 간격 */
+  }
+
+  .info-logo {
+    width: 140px;
+    margin-bottom: 0;
   }
 
   .info-menu {
-    gap: 90px;
+    display: flex;
+    gap: 70px;
+  }
+  
+  .info-col{
+    width: 120px;
   }
 
-  .info-col a {
-    font-size: 1.05rem;
+  /* 오른쪽 구역: 미디어센터+SNS+포스코그룹 바로가기 */
+  .info-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 
   .info-social {
-    margin-top: 40px;
-    gap: 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
   }
 
-  .group-box {
-    margin-top: 18px;
+  .mc-btn {
+    height: 50px;
+    padding: 0 18px;
+    
+  }
+
+  .sns {
+    width: 50px;
+    height: 50px;
+    
+  }
+
+ .group-box {
+    margin-left: 30px;   /* 남는 공간을 전부 먹으면서 오른쪽 끝으로 밀림 */
+    min-width: 220px;
   }
 
   .info-bottom {
-    margin-top: 30px;
+   margin: 0 20px 0;    /* info와 footer 사이 여백만 조절 */
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 (원본 느낌) */
+    align-items: center;
+  }
+  
+  .wa-mark {
+    height: 80px;
   }
   
    footer {
